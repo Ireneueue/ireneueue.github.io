@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Irene</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖼️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --wall: #24403F;        /* pared de sala, verde azulado profundo */
+    --wall-shadow: #1A302F;
+    --frame: #EDE6DA;       /* marco claro */
+    --brass: #B9955E;       /* latón de las cartelas */
+    --ink: #F3EFE7;
+    --ink-soft: #B8C4C0;
+    --label: #F7F4EE;
+    --label-ink: #2A2A28;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  *, *::before, *::after { box-sizing: inherit; }
+  html, body { margin: 0; min-height: 100%; }
+  body {
+    background:
+      radial-gradient(ellipse 70% 50% at 50% 0%, rgba(255,240,210,.10), transparent 70%),
+      var(--wall);
+    color: var(--ink);
+    font-family: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.55;
+  }
+  a { color: inherit; }
+  a:focus-visible { outline: 2px solid var(--brass); outline-offset: 6px; }
+
+  .wrap { max-width: 68rem; margin: 0 auto; padding: 4.5rem 1.5rem 5rem; }
+
+  header { max-width: 36rem; margin-bottom: 4.5rem; }
+  h1 {
+    font-family: "Young Serif", Georgia, "Times New Roman", serif;
+    font-weight: 400;
+    font-size: clamp(3.2rem, 9vw, 6.5rem);
+    line-height: .95;
+    letter-spacing: -.02em;
+    margin: 0 0 1.25rem;
+  }
+  header p { color: var(--ink-soft); margin: 0; font-size: 1.15rem; }
+
+  /* La "pared": tres piezas colgadas a distintas alturas */
+  .wall {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    align-items: start;
+  }
+  .piece { text-decoration: none; display: block; }
+  .piece:nth-child(2) { margin-top: 4rem; }
+  .piece:nth-child(3) { margin-top: 1.5rem; }
+
+  .frame {
+    background: var(--frame);
+    padding: 1.1rem;
+    box-shadow: 0 18px 30px -12px var(--wall-shadow), 0 2px 0 rgba(0,0,0,.15);
+    transition: transform .35s ease, box-shadow .35s ease;
+  }
+  .canvas {
+    aspect-ratio: 4 / 5;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+  }
+  .piece:nth-child(2) .canvas { aspect-ratio: 1 / 1; }
+  .piece:nth-child(3) .canvas { aspect-ratio: 3 / 4; }
+  .canvas svg { width: 100%; height: 100%; display: block; }
+
+  .piece:hover .frame,
+  .piece:focus-visible .frame {
+    transform: translateY(-4px);
+    box-shadow: 0 26px 40px -14px var(--wall-shadow), 0 2px 0 rgba(0,0,0,.15);
+  }
+
+  /* Cartela de museo */
+  .cartela {
+    margin-top: 1.25rem;
+    margin-left: auto;
+    width: min(15rem, 85%);
+    background: var(--label);
+    color: var(--label-ink);
+    padding: .8rem 1rem .9rem;
+    border-left: 3px solid var(--brass);
+    font-size: .9rem;
+    line-height: 1.45;
+  }
+  .cartela strong {
+    display: block;
+    font-family: "Young Serif", Georgia, serif;
+    font-weight: 400;
+    font-size: 1.15rem;
+    margin-bottom: .2rem;
+  }
+  .cartela span { color: #5E5E58; }
+
+  footer {
+    margin-top: 6rem;
+    color: var(--ink-soft);
+    font-size: .9rem;
+  }
+
+  @media (max-width: 760px) {
+    .wrap { padding-top: 3rem; }
+    header { margin-bottom: 3rem; }
+    .wall { grid-template-columns: 1fr; gap: 3.5rem; max-width: 22rem; }
+    .piece:nth-child(2), .piece:nth-child(3) { margin-top: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .frame { transition: none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Irene</h1>
+    <p>Pintura, dibujo y lo que vaya surgiendo. Pasa y recorre la sala.</p>
+  </header>
+
+  <main class="wall">
+    <a class="piece" href="galeria/">
+      <div class="frame"><div class="canvas">
+        <!-- Placeholder: aquí irá una de tus obras -->
+        <svg viewBox="0 0 80 100" aria-hidden="true">
+          <rect width="80" height="100" fill="#C9B79C"/>
+          <rect x="14" y="14" width="22" height="72" fill="#7E8F86"/>
+          <rect x="44" y="14" width="22" height="72" fill="#7E8F86"/>
+          <rect x="0" y="86" width="80" height="14" fill="#A68B66"/>
+        </svg>
+      </div></div>
+      <div class="cartela">
+        <strong>Galería</strong>
+        <span>Recorre las salas y mira mis obras de cerca.</span>
+      </div>
+    </a>
+
+    <a class="piece" href="https://open.spotify.com/" target="_blank" rel="noopener">
+      <div class="frame"><div class="canvas">
+        <svg viewBox="0 0 100 100" aria-hidden="true">
+          <rect width="100" height="100" fill="#3D5A57"/>
+          <circle cx="50" cy="50" r="30" fill="#1C2A29"/>
+          <circle cx="50" cy="50" r="22" fill="none" stroke="#2F4442" stroke-width="1"/>
+          <circle cx="50" cy="50" r="15" fill="none" stroke="#2F4442" stroke-width="1"/>
+          <circle cx="50" cy="50" r="7" fill="#B9955E"/>
+        </svg>
+      </div></div>
+      <div class="cartela">
+        <strong>Lo que escucho</strong>
+        <span>Mi perfil de Spotify.</span>
+      </div>
+    </a>
+
+    <a class="piece" href="sobre-mi/">
+      <div class="frame"><div class="canvas">
+        <svg viewBox="0 0 75 100" aria-hidden="true">
+          <rect width="75" height="100" fill="#D8CBB6"/>
+          <ellipse cx="37.5" cy="40" rx="14" ry="17" fill="#A68B66"/>
+          <path d="M12 100 C14 70, 61 70, 63 100 Z" fill="#7E8F86"/>
+        </svg>
+      </div></div>
+      <div class="cartela">
+        <strong>Sobre mí</strong>
+        <span>Quién soy, de dónde vengo y qué he hecho.</span>
+      </div>
+    </a>
+  </main>
+
+  <footer>© 2026 Irene</footer>
+</div>
+</body>
+</html>
