@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sobre mí · Irene Adriá Iniesta</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌙</text></svg>">
+<style>
+  :root {
+    --night: #22244A;
+    --dusk: #383C78;
+    --periwinkle: #8E97D6;
+    --mist: #ECECF7;
+    --paper: #F6F6FC;
+    --ink: #1E1F3B;
+    --ink-soft: #55588A;
+    --gold: #B8924A;
+    box-sizing: border-box;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  *, *::before, *::after { box-sizing: inherit; }
+  html, body { margin: 0; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Times New Roman", Times, "Liberation Serif", serif;
+    font-size: 1.2rem;
+    line-height: 1.7;
+  }
+  a { color: var(--dusk); text-decoration-color: var(--gold); text-underline-offset: 3px; }
+  a:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; border-radius: 3px; }
+
+  .top {
+    background: linear-gradient(180deg, var(--night), var(--dusk));
+    color: #EEEEF9;
+    padding: calc(env(safe-area-inset-top, 0px) + 1.5rem) 1.5rem 0;
+  }
+  .top-inner { max-width: 40rem; margin: 0 auto; }
+  .back { color: #C9CCF0; font-size: 1rem; text-decoration: none; }
+  .back:hover { text-decoration: underline; }
+  .top h1 { font-weight: 400; font-size: clamp(2.6rem, 7vw, 4.2rem); line-height: 1.05; margin: 2.5rem 0 .6rem; }
+  .top p { margin: 0; color: #C9CCF0; font-style: italic; font-size: 1.3rem; }
+  .vine { display: block; width: 100%; height: 60px; margin-top: 2.5rem; }
+
+  main { max-width: 40rem; margin: 0 auto; padding: 1rem 1.5rem 4rem; }
+  .intro { font-size: 1.4rem; line-height: 1.6; margin: 1.5rem 0 3rem; }
+
+  h2 {
+    font-weight: 400;
+    font-size: 1.75rem;
+    margin: 3.5rem 0 1rem;
+    display: flex; align-items: center; gap: .7rem;
+  }
+  h2::before {
+    content: "";
+    width: 14px; height: 14px; flex: none;
+    border-radius: 50% 0 50% 0;
+    background: var(--gold);
+  }
+  p { margin: 0 0 1rem; }
+  em { color: var(--ink); }
+
+  ul.soft { list-style: none; padding: 0; margin: 0; }
+  ul.soft li { padding: .55rem 0; border-bottom: 1px solid #DCDCEE; }
+  ul.soft li:last-child { border-bottom: 0; }
+  .note { color: var(--ink-soft); font-style: italic; }
+
+  /* Formación: línea de tiempo (es una secuencia real) */
+  .timeline { list-style: none; padding: 0 0 0 1.6rem; margin: 0; border-left: 1px solid var(--periwinkle); }
+  .timeline li { position: relative; margin-bottom: 1.4rem; }
+  .timeline li::before {
+    content: ""; position: absolute; left: calc(-1.6rem - 6px); top: .55rem;
+    width: 11px; height: 11px; border-radius: 50%;
+    background: var(--paper); border: 2px solid var(--dusk);
+  }
+  .timeline li.now::before { background: var(--gold); border-color: var(--gold); }
+  .timeline strong { font-weight: 400; display: block; font-size: 1.25rem; }
+  .timeline span { color: var(--ink-soft); }
+
+  .shelf { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 2rem; }
+  .shelf h3 { font-weight: 400; font-style: italic; color: var(--ink-soft); font-size: 1.1rem; margin: 0 0 .3rem; }
+
+  footer {
+    background: var(--mist);
+    text-align: center;
+    padding: 2.5rem 1.5rem 3rem;
+    font-size: 1.05rem;
+  }
+  footer a { margin: 0 .8rem; }
+
+  @media (max-width: 600px) {
+    .shelf { grid-template-columns: 1fr; }
+    .intro { font-size: 1.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="top-inner">
+    <a class="back" href="../">Volver a la sala</a>
+    <h1>Irene Adriá Iniesta</h1>
+    <p>Ilustradora, estudiante de arte y saxofonista. Valencia.</p>
+  </div>
+  <svg class="vine" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 30 C150 0, 300 60, 450 30 C600 0, 750 60, 900 30 C1050 0, 1150 45, 1200 30 L1200 60 L0 60Z" fill="#F6F6FC"/>
+  </svg>
+</div>
+
+<main>
+  <p class="intro">Me ilusiono con facilidad, y creo que se nota en lo que dibujo. Me atraen la naturaleza, las formas orgánicas y las cosas bonitas, y el arte me interesa tanto para crearlo como para enseñarlo.</p>
+
+  <h2>Ahora mismo</h2>
+  <p>Ilustro libros infantiles para el autor David James. Ya he ilustrado <em>Alba and the Dragon</em> y estoy trabajando en una nueva historia de la misma familia.</p>
+  <p>También doy clases particulares de repaso y de inglés a alumnas de primaria.</p>
+
+  <h2>Hacia dónde voy</h2>
+  <p>Me gustaría dedicarme a la docencia universitaria y la investigación, o a la dirección artística y la creación dentro de una editorial o compañía.</p>
+  <p>El curso que viene quiero hacer mi tercer año en el extranjero, con Erasmus o Promoe, y a ser posible lejos de casa. Este año también quiero empezar algún curso externo que complemente la carrera.</p>
+
+  <h2>Formación</h2>
+  <ol class="timeline">
+    <li><strong>ESO</strong><span>IES María Carbonell, Benetússer</span></li>
+    <li><strong>Bachillerato de Artes</strong><span>IES Nuestra Señora del Socorro, Benetússer</span></li>
+    <li><strong>Enseñanzas Profesionales de Música, saxofón</strong><span>Conservatorio Profesional de Música de Torrent. He tocado saxo alto, tenor, soprano y barítono.</span></li>
+    <li class="now"><strong>Grado universitario, en curso</strong><span>Segundo curso</span></li>
+  </ol>
+
+  <h2>Música</h2>
+  <ul class="soft">
+    <li>Federada en la banda del Centro Instructivo Musical de Alfafar (CIMA), junto a mi familia.</li>
+    <li>Ensemble de Generación Espontánea de la UPV.</li>
+    <li>Big Band de la UPV.</li>
+    <li>Ahora estoy aprendiendo contrabajo.</li>
+  </ul>
+
+  <h2>Idiomas</h2>
+  <p>Aprender idiomas es de las cosas que más disfruto. Estoy preparando el C1 de inglés, y quiero dedicarle más tiempo al alemán y al italiano, que acabo de empezar. Cada semana voy a los intercambios lingüísticos de Valencia.</p>
+
+  <h2>En mi mesilla</h2>
+  <p class="note">Leo para seguir aprendiendo, y también por puro placer.</p>
+  <div class="shelf">
+    <div>
+      <h3>Leyendo</h3>
+      <ul class="soft">
+        <li><em>El arte de la modernidad</em>, Sandro Bocola</li>
+        <li>Anatomía artística, Michel Lauricella</li>
+        <li><em>Dibujo y proyecto</em></li>
+        <li><em>The Time Traveler's Wife</em>, Audrey Niffenegger</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Los siguientes</h3>
+      <ul class="soft">
+        <li><em>El arte de la guerra</em>, Sun Tzu</li>
+        <li><em>Tren nocturno a Lisboa</em>, Pascal Mercier</li>
+      </ul>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <a href="https://www.linkedin.com/in/irene-adri%C3%A1-iniesta-16357b387" target="_blank" rel="noopener">LinkedIn</a>
+  <a href="https://open.spotify.com/user/317q4uf2t2jl4bg6pp3vqlwx64na" target="_blank" rel="noopener">Spotify</a>
+  <a href="../">Volver a la sala</a>
+</footer>
+</body>
+</html>
