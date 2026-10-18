@@ -3,159 +3,164 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>About me · Irene Adriá Iniesta</title>
+<title>Irene Adriá Iniesta</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌙</text></svg>">
 <style>
   :root {
     --night: #111637;
     --dusk: #222C6E;
     --periwinkle: #828ED9;
-    --mist: #C8CDEE;
-    --paper: #EBEDF9;
+    --mist: #EBEDF9;
     --ink: #111637;
-    --ink-soft: #3140A0;
-    --gold: #B8924A;
+    --gold: #C9A55A;
+    --text: #EBEDF9;
+    --text-soft: #A5AEE3;
     box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
     padding-bottom: env(safe-area-inset-bottom, 0px);
   }
   *, *::before, *::after { box-sizing: inherit; }
-  html, body { margin: 0; }
+  html, body { margin: 0; min-height: 100%; }
   body {
-    background: var(--paper);
-    color: var(--ink);
+    background: linear-gradient(180deg, var(--night) 0%, #1C245A 55%, var(--dusk) 100%);
+    background-attachment: fixed;
+    color: var(--text);
     font-family: "Times New Roman", Times, "Liberation Serif", serif;
-    font-size: 1.2rem;
-    line-height: 1.7;
+    font-size: 1.15rem;
+    line-height: 1.6;
   }
-  a { color: var(--dusk); text-decoration-color: var(--gold); text-underline-offset: 3px; }
-  a:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; border-radius: 3px; }
+  a { color: inherit; }
+  a:focus-visible { outline: 2px solid var(--gold); outline-offset: 6px; border-radius: 4px; }
 
-  .top {
-    background: linear-gradient(180deg, var(--night), var(--dusk));
-    color: #EBEDF9;
-    padding: calc(env(safe-area-inset-top, 0px) + 1.5rem) 1.5rem 0;
-  }
-  .top-inner { max-width: 40rem; margin: 0 auto; }
-  .back { color: #C8CDEE; font-size: 1rem; text-decoration: none; }
-  .back:hover { text-decoration: underline; }
-  .top h1 { font-weight: 400; font-size: clamp(2.6rem, 7vw, 4.2rem); line-height: 1.05; margin: 2.5rem 0 .6rem; }
-  .top p { margin: 0; color: #C8CDEE; font-style: italic; font-size: 1.3rem; }
-  .vine { display: block; width: 100%; height: 60px; margin-top: 2.5rem; }
+  .wrap { max-width: 68rem; margin: 0 auto; padding: 4.5rem 1.5rem 2rem; }
 
-  main { max-width: 40rem; margin: 0 auto; padding: 0 1.5rem 4rem; }
-
-  h2 {
+  header { max-width: 36rem; margin-bottom: 4.5rem; }
+  h1 {
     font-weight: 400;
-    font-size: 1.75rem;
-    margin: 3.5rem 0 1rem;
-    display: flex; align-items: center; gap: .7rem;
+    font-size: clamp(3rem, 8.5vw, 6rem);
+    line-height: 1;
+    letter-spacing: -.01em;
+    margin: 0 0 1.1rem;
   }
-  main > h2:first-child { margin-top: 1.5rem; }
-  h2::before {
-    content: "";
-    width: 14px; height: 14px; flex: none;
-    border-radius: 50% 0 50% 0;
-    background: var(--gold);
+  header p { color: var(--text-soft); margin: 0; font-size: 1.25rem; font-style: italic; }
+
+  .wall {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    align-items: start;
   }
-  p { margin: 0 0 1rem; }
-  .lead { font-size: 1.35rem; line-height: 1.6; }
+  .piece { text-decoration: none; display: block; }
+  .piece:nth-child(2) { margin-top: 4rem; }
+  .piece:nth-child(3) { margin-top: 1.5rem; }
 
-  ul.soft { list-style: none; padding: 0; margin: 0; }
-  ul.soft li { padding: .55rem 0; border-bottom: 1px solid #C8CDEE; }
-  ul.soft li:last-child { border-bottom: 0; }
-  .note { color: var(--ink-soft); font-style: italic; }
-
-  .timeline { list-style: none; padding: 0 0 0 1.6rem; margin: 0; border-left: 1px solid var(--periwinkle); }
-  .timeline li { position: relative; margin-bottom: 1.4rem; }
-  .timeline li::before {
-    content: ""; position: absolute; left: calc(-1.6rem - 6px); top: .55rem;
-    width: 11px; height: 11px; border-radius: 50%;
-    background: var(--paper); border: 2px solid var(--dusk);
+  .frame {
+    background: var(--mist);
+    padding: .9rem;
+    border: 1px solid var(--gold);
+    outline: 1px solid rgba(201,165,90,.35);
+    outline-offset: 5px;
+    box-shadow: 0 22px 34px -14px rgba(6,8,20,.75);
+    transition: transform .5s ease;
   }
-  .timeline li.now::before { background: var(--gold); border-color: var(--gold); }
-  .timeline strong { font-weight: 400; display: block; font-size: 1.25rem; }
-  .timeline span { color: var(--ink-soft); }
+  .canvas { aspect-ratio: 4 / 5; overflow: hidden; }
+  .piece:nth-child(2) .canvas { aspect-ratio: 1 / 1; }
+  .piece:nth-child(3) .canvas { aspect-ratio: 3 / 4; }
+  .canvas svg { width: 100%; height: 100%; display: block; }
+  .piece:hover .frame, .piece:focus-visible .frame { transform: translateY(-4px); }
 
-  .shelf { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 2rem; }
-  .shelf h3 { font-weight: 400; font-style: italic; color: var(--ink-soft); font-size: 1.1rem; margin: 0 0 .3rem; }
-
-  footer { background: var(--mist); text-align: center; padding: 2.5rem 1.5rem 3rem; font-size: 1.05rem; }
-  footer a { margin: 0 .8rem; }
-
-  @media (max-width: 600px) {
-    .shelf { grid-template-columns: 1fr; }
-    .lead { font-size: 1.25rem; }
+  .cartela {
+    margin-top: 1.5rem;
+    margin-left: auto;
+    width: min(15rem, 85%);
+    background: var(--mist);
+    color: var(--ink);
+    padding: .8rem 1rem .9rem;
+    border-radius: 2px 14px 2px 14px;
+    border-left: 3px solid var(--gold);
+    font-size: 1rem;
+    line-height: 1.4;
   }
+  .cartela strong { display: block; font-weight: 400; font-size: 1.3rem; margin-bottom: .15rem; }
+  .cartela span { color: #3140A0; font-style: italic; }
+
+  .meadow { display: block; width: 100%; height: auto; margin-top: 5rem; }
+  footer { text-align: center; color: var(--text-soft); font-size: .95rem; padding: 0 1.5rem 2rem; background: #1C245A; }
+
+  @media (max-width: 760px) {
+    .wrap { padding-top: 3rem; }
+    header { margin-bottom: 3rem; }
+    .wall { grid-template-columns: 1fr; gap: 3.5rem; max-width: 22rem; }
+    .piece:nth-child(2), .piece:nth-child(3) { margin-top: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) { .frame { transition: none; } }
 </style>
 </head>
 <body>
-
-<div class="top">
-  <div class="top-inner">
-    <a class="back" href="../">Back to the gallery entrance</a>
+<div class="wrap">
+  <header>
     <h1>Irene Adriá Iniesta</h1>
-    <p>Fine Arts student, illustrator and saxophonist. Valencia, Spain.</p>
-  </div>
-  <svg class="vine" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M0 30 C150 0, 300 60, 450 30 C600 0, 750 60, 900 30 C1050 0, 1150 45, 1200 30 L1200 60 L0 60Z" fill="#EBEDF9"/>
-  </svg>
+    <p>Illustration, music and beautiful things. Come in and walk through the gallery.</p>
+  </header>
+
+  <main class="wall">
+    <a class="piece" href="gallery/">
+      <div class="frame"><div class="canvas">
+        <!-- Placeholder: one of Irene's works goes here -->
+        <svg viewBox="0 0 80 100" aria-hidden="true">
+          <rect width="80" height="100" fill="#3140A0"/>
+          <path d="M40 8 C66 30, 66 70, 40 92 C14 70, 14 30, 40 8Z" fill="#C9A55A" opacity=".9"/>
+          <g fill="none" stroke="#3140A0" stroke-width="1.4">
+            <path d="M40 30 a5 5 0 1 1 -5 5 a9 9 0 1 1 9 9"/>
+            <path d="M40 58 a4 4 0 1 1 -4 4 a7 7 0 1 1 7 7"/>
+          </g>
+          <g fill="#828ED9"><rect x="30" y="76" width="4" height="4"/><rect x="38" y="80" width="4" height="4"/><rect x="46" y="76" width="4" height="4"/></g>
+        </svg>
+      </div></div>
+      <div class="cartela"><strong>Gallery</strong><span>Wander through the rooms and see my work up close.</span></div>
+    </a>
+
+    <a class="piece" href="https://open.spotify.com/user/317q4uf2t2jl4bg6pp3vqlwx64na" target="_blank" rel="noopener">
+      <div class="frame"><div class="canvas">
+        <svg viewBox="0 0 100 100" aria-hidden="true">
+          <rect width="100" height="100" fill="#828ED9"/>
+          <circle cx="50" cy="50" r="32" fill="#111637"/>
+          <g fill="none" stroke="#222C6E" stroke-width="1"><circle cx="50" cy="50" r="25"/><circle cx="50" cy="50" r="18"/></g>
+          <circle cx="50" cy="50" r="8" fill="#C9A55A"/>
+          <circle cx="50" cy="50" r="1.6" fill="#111637"/>
+        </svg>
+      </div></div>
+      <div class="cartela"><strong>What I listen to</strong><span>My Spotify profile.</span></div>
+    </a>
+
+    <a class="piece" href="about/">
+      <div class="frame"><div class="canvas">
+        <svg viewBox="0 0 75 100" aria-hidden="true">
+          <rect width="75" height="100" fill="#EBEDF9"/>
+          <path d="M37.5 14 C52 14, 56 34, 50 46 C62 56, 64 80, 62 100 L13 100 C11 80, 13 56, 25 46 C19 34, 23 14, 37.5 14Z" fill="#222C6E"/>
+          <g fill="#C9A55A"><circle cx="30" cy="66" r="2.4"/><circle cx="44" cy="74" r="2.4"/><circle cx="34" cy="84" r="2.4"/><circle cx="48" cy="90" r="2.4"/></g>
+          <g fill="#828ED9"><rect x="40" y="60" width="3.5" height="3.5"/><rect x="24" y="78" width="3.5" height="3.5"/></g>
+        </svg>
+      </div></div>
+      <div class="cartela"><strong>About me</strong><span>Who I am, what I do and where I'm headed.</span></div>
+    </a>
+  </main>
 </div>
 
-<main>
-  <h2>Right now</h2>
-  <p class="lead">I'm in my second year of a Bachelor's degree in Fine Arts at the Universitat Politècnica de València (UPV).</p>
-  <p>Alongside my studies, I illustrate children's books for the author David James. I illustrated <em>Alba and the Dragon</em> and I'm currently working on a new story in the same spirit.</p>
-  <p>I also give private lessons, helping primary school students with their schoolwork and with English.</p>
-
-  <h2>Where I'm headed</h2>
-  <p>I'd love to work in university teaching and research, in art direction, or in artistic creation within a publisher or company.</p>
-  <p>Next year I'm planning to spend my third year abroad, through Erasmus or PROMOE, ideally somewhere far from Spain. This year I'd also like to start an external course to complement my degree.</p>
-
-  <h2>Education</h2>
-  <ol class="timeline">
-    <li><strong>Secondary education (ESO)</strong><span>IES María Carbonell, Benetússer</span></li>
-    <li><strong>Arts Baccalaureate</strong><span>IES Nuestra Señora del Socorro, Benetússer</span></li>
-    <li><strong>Professional Music Studies in saxophone</strong><span>Conservatorio Profesional de Música de Torrent. I've played alto, tenor, soprano and baritone sax.</span></li>
-    <li class="now"><strong>Bachelor's in Fine Arts, in progress</strong><span>Universitat Politècnica de València, second year</span></li>
-  </ol>
-
-  <h2>Music</h2>
-  <ul class="soft">
-    <li>Member of the band of the Centro Instructivo Musical de Alfafar (CIMA), together with my family.</li>
-    <li>Ensemble de Generación Espontánea, UPV.</li>
-    <li>UPV Big Band.</li>
-    <li>Currently taking double bass lessons.</li>
-  </ul>
-
-  <h2>Languages</h2>
-  <p>Learning languages is one of the things I enjoy most. I'm working towards a C1 certificate in English, and I'd like to give more time to German and Italian, which I'm just starting. Every week I go to the language exchanges organised in Valencia.</p>
-
-  <h2>On my nightstand</h2>
-  <p class="note">I read to keep learning, and also just for the pleasure of it.</p>
-  <div class="shelf">
-    <div>
-      <h3>Reading</h3>
-      <ul class="soft">
-        <li><em>The Art of Modernism</em>, Sandro Bocola</li>
-        <li><em>Anatomía artística</em>, Michel Lauricella</li>
-        <li><em>Design Drawing</em>, Francis D. K. Ching</li>
-        <li><em>The Time Traveler's Wife</em>, Audrey Niffenegger</li>
-      </ul>
-    </div>
-    <div>
-      <h3>Up next</h3>
-      <ul class="soft">
-        <li><em>The Art of War</em>, Sun Tzu</li>
-        <li><em>The Midnight Train</em>, Matt Haig</li>
-      </ul>
-    </div>
-  </div>
-</main>
-
-<footer>
-  <a href="https://www.linkedin.com/in/irene-adri%C3%A1-iniesta-16357b387" target="_blank" rel="noopener">LinkedIn</a>
-  <a href="https://open.spotify.com/user/317q4uf2t2jl4bg6pp3vqlwx64na" target="_blank" rel="noopener">Spotify</a>
-  <a href="../">Back to the gallery entrance</a>
-</footer>
+<!-- Flower meadow, a nod to Klimt -->
+<svg class="meadow" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 70 C200 40, 380 90, 600 60 C820 30, 1000 85, 1200 55 L1200 120 L0 120Z" fill="#1C245A"/>
+  <g fill="#828ED9" opacity=".8">
+    <circle cx="90" cy="72" r="4"/><circle cx="260" cy="70" r="3"/><circle cx="430" cy="78" r="4"/>
+    <circle cx="700" cy="60" r="3"/><circle cx="880" cy="66" r="4"/><circle cx="1090" cy="62" r="3"/>
+  </g>
+  <g fill="#C9A55A" opacity=".85">
+    <circle cx="170" cy="80" r="2.5"/><circle cx="520" cy="72" r="2.5"/><circle cx="780" cy="70" r="2.5"/><circle cx="990" cy="78" r="2.5"/>
+  </g>
+  <g fill="#EBEDF9" opacity=".6">
+    <circle cx="340" cy="86" r="2"/><circle cx="620" cy="80" r="2"/><circle cx="1150" cy="74" r="2"/>
+  </g>
+</svg>
+<footer>© 2026 Irene Adriá Iniesta</footer>
 </body>
 </html>
