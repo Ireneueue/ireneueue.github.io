@@ -17,14 +17,17 @@ window.GALLERY = {
     { title: "Untitled VII",  technique: "Charcoal on Ingres paper", size: "70 × 50 cm", w: 70, h: 50, year: "" },
     { title: "Untitled VIII", technique: "Charcoal on Ingres paper", size: "50 × 70 cm", w: 50, h: 70, year: "" }
   ],
+  // Sizes are provisional (estimated from the photos) until Irene gives the real measurements.
   oil: [
-    { title: "Untitled I",   technique: "Oil on canvas", size: "", w: 65, h: 81, year: "" },
-    { title: "Untitled II",  technique: "Oil on canvas", size: "", w: 81, h: 65, year: "" },
-    { title: "Untitled III", technique: "Oil on canvas", size: "", w: 60, h: 73, year: "" },
-    { title: "Untitled IV",  technique: "Oil on canvas", size: "", w: 100, h: 81, year: "" },
-    { title: "Untitled V",   technique: "Oil on canvas", size: "", w: 54, h: 65, year: "" },
-    { title: "Untitled VI",  technique: "Oil on canvas", size: "", w: 73, h: 92, year: "" },
-    { title: "Untitled VII", technique: "Oil on canvas", size: "", w: 81, h: 65, year: "" }
+    { src: "oil-portrait-with-cat.jpg", title: "Portrait with cat", technique: "Oil", size: "", w: 73, h: 60, year: "" },
+    { src: "oil-bench-at-dusk.jpg", title: "Bench at dusk", technique: "Oil", size: "", w: 81, h: 59, year: "" },
+    { src: "oil-portrait-bearded-man.jpg", title: "Portrait of a bearded man", technique: "Oil", size: "", w: 53, h: 73, year: "" },
+    { src: "oil-trombone.jpg", title: "Trombone", technique: "Oil", size: "", w: 81, h: 57, year: "" },
+    { src: "oil-reclining-nude.jpg", title: "Reclining nude", technique: "Oil", size: "", w: 116, h: 80, year: "" },
+    { src: "oil-market.jpg", title: "Market stall", technique: "Oil", size: "", w: 59, h: 73, year: "" },
+    { src: "oil-self-portrait-surprise.jpg", title: "Surprise", technique: "Oil", size: "", w: 50, h: 73, year: "" },
+    { src: "oil-mountain-landscape.jpg", title: "Mountain landscape", technique: "Oil", size: "", w: 73, h: 53, year: "" },
+    { src: "oil-sheep-in-the-meadow.jpg", title: "Sheep in the meadow", technique: "Oil", size: "", w: 65, h: 45, year: "" }
   ],
   quick: [
     { title: "Untitled I",    technique: "Indian ink on paper", size: "", w: 21, h: 30, year: "" },
