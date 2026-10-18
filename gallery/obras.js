@@ -42,11 +42,17 @@ window.GALLERY = {
   ],
   // Sketchbook pages, in order. Any size or orientation works.
   sketchbook: [
-    { title: "Sketch 1", orient: "portrait" },  { title: "Sketch 2", orient: "landscape" },
-    { title: "Sketch 3", orient: "portrait" },  { title: "Sketch 4", orient: "portrait" },
-    { title: "Sketch 5", orient: "landscape" }, { title: "Sketch 6", orient: "square" },
-    { title: "Sketch 7", orient: "portrait" },  { title: "Sketch 8", orient: "landscape" },
-    { title: "Sketch 9", orient: "portrait" },  { title: "Sketch 10", orient: "portrait" }
+    { src: "sketch-01.jpg", title: "Sketch 1" },
+    { src: "sketch-02.jpg", title: "Sketch 2" },
+    { src: "sketch-03.jpg", title: "Sketch 3" },
+    { src: "sketch-04.jpg", title: "Sketch 4" },
+    { src: "sketch-05.jpg", title: "Sketch 5" },
+    { src: "sketch-06.jpg", title: "Sketch 6" },
+    { src: "sketch-07.jpg", title: "Sketch 7" },
+    { src: "sketch-08.jpg", title: "Sketch 8" },
+    { src: "sketch-09.jpg", title: "Sketch 9" },
+    { src: "sketch-10.jpg", title: "Sketch 10" },
+    { src: "sketch-11.jpg", title: "Sketch 11" }
   ],
   // Digital drawings shown on the iPad.
   digital: [
