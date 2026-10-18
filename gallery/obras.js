@@ -52,7 +52,21 @@ window.GALLERY = {
     { src: "sketch-08.jpg", title: "Sketch 8" },
     { src: "sketch-09.jpg", title: "Sketch 9" },
     { src: "sketch-10.jpg", title: "Sketch 10" },
-    { src: "sketch-11.jpg", title: "Sketch 11" }
+    { src: "sketch-11.jpg", title: "Sketch 11" },
+    { src: "sketch-12.jpg", title: "Sketch 12" },
+    { src: "sketch-13.jpg", title: "Sketch 13" },
+    { src: "sketch-14.jpg", title: "Sketch 14" },
+    { src: "sketch-15.jpg", title: "Sketch 15" },
+    { src: "sketch-16.jpg", title: "Sketch 16" },
+    { src: "sketch-17.jpg", title: "Sketch 17" },
+    { src: "sketch-18.jpg", title: "Sketch 18" },
+    { src: "sketch-19.jpg", title: "Sketch 19" },
+    { src: "sketch-20.jpg", title: "Sketch 20" },
+    { src: "sketch-21.jpg", title: "Sketch 21" },
+    { src: "sketch-22.jpg", title: "Sketch 22" },
+    { src: "sketch-23.jpg", title: "Sketch 23" },
+    { src: "sketch-24.jpg", title: "Sketch 24" },
+    { src: "sketch-25.jpg", title: "Sketch 25" }
   ],
   // Digital drawings shown on the iPad.
   digital: [
