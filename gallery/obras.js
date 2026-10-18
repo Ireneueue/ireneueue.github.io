@@ -50,9 +50,16 @@ window.GALLERY = {
   ],
   // Digital drawings shown on the iPad.
   digital: [
-    { title: "Digital 1", orient: "portrait" }, { title: "Digital 2", orient: "landscape" },
-    { title: "Digital 3", orient: "portrait" }, { title: "Digital 4", orient: "square" },
-    { title: "Digital 5", orient: "portrait" }
+    { src: "digital-01.jpg", title: "Digital drawing 1" },
+    { src: "digital-02.jpg", title: "Digital drawing 2" },
+    { src: "digital-03.jpg", title: "Digital drawing 3" },
+    { src: "digital-04.jpg", title: "Digital drawing 4" },
+    { src: "digital-05.jpg", title: "Digital drawing 5" },
+    { src: "digital-06.jpg", title: "Digital drawing 6" },
+    { src: "digital-07.jpg", title: "Digital drawing 7" },
+    { src: "digital-08.jpg", title: "Digital drawing 8" },
+    { src: "digital-09.jpg", title: "Digital drawing 9" },
+    { src: "digital-10.jpg", title: "Digital drawing 10" }
   ],
   installation: {
     title: "Group installation",

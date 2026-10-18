@@ -82,6 +82,9 @@
     .nav.side { position: absolute; bottom: calc(env(safe-area-inset-bottom, 0px) + 16px); }
     .nav.side.prev { left: 8px; } .nav.side.next { right: 8px; }
     #map { width: 120px; height: 120px; }
+    .stage .nav { position: absolute; bottom: calc(env(safe-area-inset-bottom, 0px) + 6px); }
+    .stage .nav.prev { left: 16px; } .stage .nav.next { right: 16px; }
+    .ipad { padding: 12px; border-radius: 20px; }
   }
 
   /* sketchbook */
@@ -775,7 +778,7 @@ function pageEl(i, side) {
   return p;
 }
 function sizeBook() {
-  const maxH = innerHeight - 170, maxW = innerWidth - 150;
+  const maxH = innerHeight - 170, maxW = innerWidth - (innerWidth < 760 ? 40 : 150);
   const ratio = .72;                 // page width / height
   let h = Math.min(maxH, 760), w = h * ratio;
   const pagesAcross = single() ? 1 : 2;
@@ -832,7 +835,8 @@ swipe(spread, d => flip(d));
 /* iPad */
 const tabEl = document.getElementById('tablet'), screenEl = tabEl.querySelector('.screen'); let tIdx = 0;
 function sizeTablet() {
-  const maxW = innerWidth - 150, maxH = innerHeight - 170, ratio = 4 / 3;   // landscape iPad
+  const narrow = innerWidth < 760, maxW = innerWidth - (narrow ? 56 : 150), maxH = innerHeight - 170;
+  const ratio = innerHeight > innerWidth ? 3 / 4 : 4 / 3;   // the iPad turns with the screen
   let w = Math.min(maxW, 1000), h = w / ratio; if (h > maxH) { h = maxH; w = h * ratio; }
   screenEl.style.width = w + 'px'; screenEl.style.height = h + 'px';
 }
